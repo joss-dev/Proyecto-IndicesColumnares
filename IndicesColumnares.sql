@@ -1,6 +1,6 @@
 -- Variables para controlar el bucle de inserciónnn
 DECLARE @RowCount INT = 0;
-DECLARE @TotalRows INT = 900000; -- Número total de registros a insertar
+DECLARE @TotalRows INT = 1000000; -- Número total de registros a insertar
 
 -- Habilitar IDENTITY_INSERT si es necesario
 -- SET IDENTITY_INSERT GASTO ON;
@@ -30,7 +30,7 @@ BEGIN
     DECLARE @importe DECIMAL(8, 2) = CAST(RAND() * 1000 AS DECIMAL(8, 2)); 
 
     -- Insertar el registro aleatorio en la tabla GASTO
-    INSERT INTO gasto (idprovincia, idlocalidad, idconsorcio,periodo, fechapago, idtipogasto, importe)
+    INSERT INTO gastonew (idprovincia, idlocalidad, idconsorcio,periodo, fechapago, idtipogasto, importe)
     VALUES (@idprovincia, @idlocalidad,@idconsorcio ,@periodo, @fechapago, @idtipogasto, @importe);
 
     -- Incrementar el contador
