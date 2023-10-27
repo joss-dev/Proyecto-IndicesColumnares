@@ -1,4 +1,4 @@
--- Variables para controlar el bucle de inserción
+-- Variables para controlar el bucle de inserciónnn
 DECLARE @RowCount INT = 0;
 DECLARE @TotalRows INT = 900000; -- Número total de registros a insertar
 
