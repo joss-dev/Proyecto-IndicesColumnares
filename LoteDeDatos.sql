@@ -2,7 +2,7 @@
 ---------------
 -- Provincias
 ---------------
-
+GO
 Insert into provincia (idprovincia, descripcion,km2,cantdptos,poblacion,nomcabe) values (1, 'Capital Federal',203,1,2891082,'Capital Federal')
 Insert into provincia (idprovincia, descripcion,km2,cantdptos,poblacion,nomcabe) values (2, 'Buenos Aires',307571,127,15594428,'La Plata')
 Insert into provincia (idprovincia, descripcion,km2,cantdptos,poblacion,nomcabe) values (3, 'Catamarca',102602,16,367820,'San Fernando del Valle de Catamarca')
@@ -29,7 +29,7 @@ Insert into provincia (idprovincia, descripcion,km2,cantdptos,poblacion,nomcabe)
 Insert into provincia (idprovincia, descripcion,km2,cantdptos,poblacion,nomcabe) values (24, 'Tucuman',22524,17,1448200,'San Miguel de Tucumán')
  
 --Select * from provincia
-
+GO
 ---------------
 -- Localidades
 ---------------
@@ -1001,7 +1001,7 @@ INSERT INTO localidad (idprovincia, idlocalidad, descripcion) VALUES (24, 16, 'T
 INSERT INTO localidad (idprovincia, idlocalidad, descripcion) VALUES (24, 17, 'Yerba Buena')
 
 --select * from localidad
-
+GO
 ---------------
 -- Zonas
 ---------------
@@ -1013,7 +1013,7 @@ Insert into zona (descripcion) values ('OESTE')
 Insert into zona (descripcion) values ('Periferica')
 
 --select * from zona
-
+GO
 ---------------
 -- Conserjes
 ---------------
@@ -1238,7 +1238,7 @@ Insert into conserje (ApeyNom,tel,fechnac,estciv) values ('PALACIOS ADAN L.', '3
 Insert into conserje (ApeyNom,tel,fechnac,estciv) values ('GAUTO JORGE R.', '374449472', '19940826', 'C')
 Insert into conserje (ApeyNom,tel,fechnac,estciv) values ('AGUIRRE DE F. CARMEN DEL', '374449472', '19931013', 'S')
 
-
+GO
 
 -- select * from conserje
 
@@ -1423,7 +1423,7 @@ Insert into administrador(apeynom,viveahi,tel,sexo,fechnac) values ('ARAUJO GUIL
 
 -- select * from administrador
 
-
+GO
 -----------------
 -- Consorcios
 -----------------
@@ -1529,7 +1529,7 @@ INSERT INTO consorcio(idprovincia,idlocalidad,idconsorcio, Nombre,direccion,idzo
 INSERT INTO consorcio(idprovincia,idlocalidad,idconsorcio, Nombre,direccion,idzona,idconserje,idadmin) VALUES (24, 17, 6, 'EDIFICIO-24176', 'RIVADAVIA Nº 1778', 1, 1, 100)
 
 
-
+GO
 -------------------
 -- TIPO de Gastos 
 -------------------
@@ -1540,7 +1540,7 @@ Insert into tipogasto (idtipogasto, descripcion) values (4,'Aportes')
 Insert into tipogasto (idtipogasto, descripcion) values (5,'OTROS')
 
 
-
+GO
 -- Variables para controlar el bucle de inserciónnn
 DECLARE @RowCount INT = 0;
 DECLARE @TotalRows INT = 1000000; -- Número total de registros a insertar
@@ -1582,3 +1582,4 @@ BEGIN
     -- Incrementar el contador
     SET @RowCount = @RowCount + 1;
 END
+GO
