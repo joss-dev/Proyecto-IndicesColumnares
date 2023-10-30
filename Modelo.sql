@@ -1,7 +1,9 @@
+Go
 CREATE DATABASE base_consorcio;
 
+go
 USE base_consorcio;
-
+go
 Create table provincia (
 	idprovincia int primary key not null, 
 	descripcion varchar(50) not null,
@@ -10,7 +12,7 @@ Create table provincia (
 	poblacion int not null,
 	nomcabe varchar(50) not null
 )
-
+go
 Create table localidad (
 	idprovincia int not null, 
 	idlocalidad int not null, 
@@ -19,12 +21,14 @@ Create table localidad (
 	Constraint FK_localidad_pcia FOREIGN KEY (idprovincia)  REFERENCES provincia(idprovincia)						 					     					     					     				     					     
 )
 
+go
 
 Create table zona (
 	idzona int identity primary key not null, 
 	descripcion varchar(50) not null
 )
 
+go
 
 Create table conserje (
 	idconserje int identity primary key not null, 
@@ -35,6 +39,7 @@ Create table conserje (
 	CONSTRAINT CK_estadocivil CHECK (estciv IN ('S', 'C','D','O'))
 )
 
+go
 
 Create table administrador	(
 	idadmin int identity primary key not null, 
@@ -47,12 +52,14 @@ Create table administrador	(
     fechnac datetime not null
 )
 
+go
 
 Create table tipogasto	(
 	idtipogasto int primary key not null, 
 	descripcion varchar(50) not null
 )
 
+go
 
 Create table consorcio	(
 	idprovincia int not null,
@@ -70,6 +77,8 @@ Create table consorcio	(
 	Constraint FK_consorcio_admin FOREIGN KEY (idadmin)  REFERENCES administrador(idadmin)						 					     					     					     				     					     						 						 						 					     					     					     				     					     						 
 )
 
+go
+
 Create table gasto (
 	idgasto int identity not null,
 	idprovincia int not null,
@@ -84,6 +93,7 @@ Create table gasto (
 	Constraint FK_gasto_tipo FOREIGN KEY (idtipogasto)  REFERENCES tipogasto(idtipogasto)					     					     						 					     					     
 )
 
+go
 
 Create table gastonew (
 	idgasto int identity not null,
@@ -98,3 +108,4 @@ Create table gastonew (
 	Constraint FK_gastonew_consorcio FOREIGN KEY (idprovincia,idlocalidad,idconsorcio)  REFERENCES consorcio(idprovincia,idlocalidad,idconsorcio),
 	Constraint FK_gastonew_tipo FOREIGN KEY (idtipogasto)  REFERENCES tipogasto(idtipogasto)					     					     						 					     					     
 )
+go
