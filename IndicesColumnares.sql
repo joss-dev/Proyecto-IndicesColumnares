@@ -13,12 +13,12 @@ go
 --CREATE NONCLUSTERED COLUMNSTORE INDEX NombreDelIndice
 --ON NombreDeLaTabla;
 
-
+go
 --El siguiente comando crea un indice no agrupado en la tabla gastonew, en las columnas especificadas
 --CREATE NONCLUSTERED COLUMNSTORE INDEX NombreDelIndice
 --ON NombreDeLaTabla (nombreColumna1, nombreColumna2,.....);
 CREATE NONCLUSTERED COLUMNSTORE INDEX Indice_NoAgrupado
-ON gastonew (idprovincia, idlocalidad, idconsorcio, periodo, fechapago, idtipogasto, importe);
+ON gastonew (idgasto, idprovincia, idlocalidad, idconsorcio, periodo, fechapago, idtipogasto, importe);
 
 --CONSULTAS SOBRE LAS TABLAS GASTO Y GASTONEW PARA HACER UN ANALISIS DEL RENDIMIENTO
 
@@ -26,7 +26,7 @@ ON gastonew (idprovincia, idlocalidad, idconsorcio, periodo, fechapago, idtipoga
 --Selecciona la fecha de pago y la suma total de los importes para cada fecha única.
 --Agrupa los resultados por fecha de pago.
 --Ordena los resultados por fecha de pago.
-
+go
 SELECT fechapago, SUM(importe) as TotalVentas
 FROM gasto
 GROUP BY fechapago
@@ -49,5 +49,3 @@ SELECT idtipogasto, SUM(importe) as TotalGastos
 FROM gastonew
 WHERE periodo = 3
 GROUP BY idtipogasto;
-
-
