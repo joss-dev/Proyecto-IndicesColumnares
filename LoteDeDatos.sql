@@ -1,4 +1,8 @@
 
+GO
+
+USE base_consorcio;
+
 ---------------
 -- Provincias
 ---------------
@@ -1544,9 +1548,6 @@ GO
 -- Variables para controlar el bucle de inserciónnn
 DECLARE @RowCount INT = 0;
 DECLARE @TotalRows INT = 1000000; -- Número total de registros a insertar
-
--- Habilitar IDENTITY_INSERT si es necesario
--- SET IDENTITY_INSERT GASTO ON;
 
 -- Inicio del bucle de inserción
 WHILE @RowCount < @TotalRows
