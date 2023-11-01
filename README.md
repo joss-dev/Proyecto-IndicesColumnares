@@ -6,4 +6,4 @@ Proyecto de investigación sobre Índices columnares en SQL SERVER
 
 # :point_right: El archivo modelo.sql contiene la definicion de la base de datos 
 
-# :point_right: El archivo informe contiene la elaboracion del documento de investigación
+# :point_right: El archivo InformeIndicesColumnares.pdf contiene la elaboracion del documento de investigación
