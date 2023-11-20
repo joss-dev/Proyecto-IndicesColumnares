@@ -1,7 +1,12 @@
---en este scrip realizamos la creacion de los triggers correspondientes a la tabla conserje, en sus 3 casos, insert, delete, update
+--En este script realizamos la creacion de una tabla llamada auditoria en donde se van monitorear y registrar
+--operaciones que afecten al contenido de la tabla conserje, proporcionando así un
+--registro de actividad y posibilitando la detección de acciones no autorizadas o
+--inesperadas
+--y la creacion de los triggers correspondientes a la tabla conserje, en sus 3 casos, insert, delete, update
 
 USE [base_consorcio]
 
+--La tabla en cuestión sirve para dos propósitos principales: proporcionar una vista rápida de los datos alterados en las tablas que activaron el disparador (como el nombre de la tabla, los valores modificados, la columna afectada, etc.) y almacenar información importante relacionada con la acción realizada, como el usuario que realizó la acción, el tipo de acción realizada y la fecha y hora en que ocurrió.
 CREATE TABLE auditoria (
     id_auditoria int identity primary key,
     tabla_afectada varchar(100),  
