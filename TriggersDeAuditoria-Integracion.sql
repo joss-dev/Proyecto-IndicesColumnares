@@ -78,7 +78,7 @@ GO
 -- Trigger para UPDATE en la tabla conserje
 CREATE TRIGGER dbo.trconserjeUpdate
    ON  dbo.conserje
-   AFTER DELETE
+   AFTER UPDATE
 AS 
 BEGIN
 	SET NOCOUNT ON;
